@@ -1,4 +1,4 @@
-name: Run Tests
+name: Build and Test
 
 on:
   push:
@@ -6,14 +6,14 @@ on:
       - master
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up JDK 11
+      - name: Set up JDK 8
         uses: actions/setup-java@v2
         with:
           java-version: '8'
@@ -21,5 +21,10 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Build project
+        run: ./gradlew assembleDebug
+        continue-on-error: false  # Fail the workflow if build fails
+
       - name: Run tests
         run: ./gradlew test
+        continue-on-error: false  # Fail the workflow if tests fail
