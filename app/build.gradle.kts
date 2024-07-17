@@ -26,15 +26,22 @@ android {
             useSupportLibrary = true
         }
 
+        // Load properties from local.properties or use defaults
         val properties = Properties()
-        properties.load(project.rootProject.file("local.properties").inputStream())
+        val localPropertiesFile = File(rootProject.projectDir, "local.properties")
+        if (localPropertiesFile.exists()) {
+            properties.load(localPropertiesFile.inputStream())
+        }
+
+        // Default values if properties are not found
         val twitterApiKey: String = properties.getProperty("API_KEY", "")
-        buildConfigField("String", "API_KEY", "\"$twitterApiKey\"")
         val twitterSecretKey: String = properties.getProperty("API_SECRET_KEY", "")
-        buildConfigField("String", "API_SECRET_KEY", "\"$twitterSecretKey\"")
         val twitterAccessToken: String = properties.getProperty("ACCESS_TOKEN", "")
-        buildConfigField("String", "ACCESS_TOKEN", "\"$twitterAccessToken\"")
         val twitterAccessTokenSecret: String = properties.getProperty("ACCESS_TOKEN_SECRET", "")
+
+        buildConfigField("String", "API_KEY", "\"$twitterApiKey\"")
+        buildConfigField("String", "API_SECRET_KEY", "\"$twitterSecretKey\"")
+        buildConfigField("String", "ACCESS_TOKEN", "\"$twitterAccessToken\"")
         buildConfigField("String", "ACCESS_TOKEN_SECRET", "\"$twitterAccessTokenSecret\"")
     }
 
