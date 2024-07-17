@@ -1,10 +1,12 @@
 [versions]
 agp = "8.5.1"
+coreTesting = "2.2.0"
 kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
+kotlinxCoroutinesTest = "1.7.3"
 lifecycleRuntimeKtx = "2.8.3"
 activityCompose = "1.9.0"
 composeBom = "2024.06.00"
@@ -12,6 +14,8 @@ appcompat = "1.7.0"
 desugar_jdk_libs = "2.0.4"
 material = "1.12.0"
 hiltAndroid = "2.51.1"
+mockitoCore = "5.12.0"
+mockitoKotlin = "5.4.0"
 retrofit = "2.11.0"
 converterGson = "2.11.0"
 okhttp = "4.12.0"
@@ -19,6 +23,7 @@ ksp = "2.0.0-1.0.21"
 hiltNavigation = "1.2.0"
 hiltNavigationCompose = "1.2.0"
 lifecycleRuntimeComposeAndroid = "2.8.3"
+robolectric = "4.5.1"
 scribejavaApis = "8.3.3"
 scribejavaHttpclientOkhttp = "8.3.3"
 scribejavaJava8 = "8.3.3"
@@ -28,6 +33,9 @@ jetbrainsKotlinJvm = "2.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
+androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -42,15 +50,19 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltAndroid" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converterGson" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 androidx-hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation", version.ref = "hiltNavigation" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-lifecycle-runtime-compose-android = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose-android", version.ref = "lifecycleRuntimeComposeAndroid" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 scribejava-apis = { group = "com.github.scribejava", name = "scribejava-apis", version.ref = "scribejavaApis" }
 scribejava-core = { group = "com.github.scribejava", name = "scribejava-core", version.ref = "scribejavaCore" }
 desugar_jdk_libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar_jdk_libs" }

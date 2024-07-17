@@ -46,6 +46,9 @@ class TwitterCounterViewModel @Inject constructor(
         null
     )
 
+    val requestToken = _requestToken
+
+
     val authUrl: StateFlow<String?> = flow {
         _requestToken.collect { requestToken ->
             requestToken?.let {

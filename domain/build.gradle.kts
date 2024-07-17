@@ -40,6 +40,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.mockito.kotlin)
     api(libs.scribejava.apis)
     api(libs.scribejava.core)
 }
